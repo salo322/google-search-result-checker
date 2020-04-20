@@ -1,7 +1,4 @@
-chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
-          if (request.greeting == "hello"){
-           
+
             let button = document.createElement('input');
                 button.type = 'checkbox';
                 button.className = 'checkButton';
@@ -11,15 +8,16 @@ chrome.runtime.onMessage.addListener(
             let append = document.querySelector('#ucs');
                 append.appendChild(button);
                 append.appendChild(label);
-         $('.checkButton').click(function() {
-          $('input:checkbox').not(this).prop('checked', this.checked);
-                   
-                  });
+          
 
 
             let input = document.createElement('input');
                 input.type = 'checkbox';
                 $('.LC20lb').prepend(input);
+                $('.checkButton').click(function() {
+                $('input:checkbox').not(this).prop('checked', this.checked);
+                            
+                           });
                 
               
 
@@ -36,15 +34,13 @@ chrome.runtime.onMessage.addListener(
                     $("body").append(inp);
                     var str = ""
                   
-                    $('.LC20lb').filter(':has(:checkbox:checked)').each(function() {                     
-                       str+= $(this).text()
+                    $('a').filter(':has(:checkbox:checked)').each(function() {                     
+                       str+= $(this).attr('href')
                     })
                   
                     inp.val(str).select();
                     document.execCommand("copy");
                     inp.remove();
                   })
-                  }
-    });
-
+               
 

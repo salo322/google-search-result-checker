@@ -2,17 +2,15 @@
     "name": "Amazon",
      "content_scripts": [
      {
+      "run_at":"document_end",
       "css": ["content.css"],
-       "matches": ["https://www.google.com/*"
-
-     ],
-      
-       "js": [ "content.js","jquery.js"]
+       "matches": ["*://*.google.com/*"],
+       "js": ["jquery.js", "content.js"]
      }
    ],
      "permissions": [
             "storage","tabs",
-            "https://www.google.com/*"
+            "*://*.google.com/*"
           ],
     "background" : {
       "scripts" : [

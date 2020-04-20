@@ -1,11 +1,11 @@
 {
-    "name": "Amazon",
+    "name": "Google results checker",
      "content_scripts": [
      {
       "run_at":"document_end",
       "css": ["content.css"],
        "matches": ["*://*.google.com/*"],
-       "js": ["jquery.js", "content.js"]
+       "js": ["./scripts/jquery.js", "./scripts/content.js"]
      }
    ],
      "permissions": [
@@ -14,7 +14,7 @@
           ],
     "background" : {
       "scripts" : [
-        "jquery.js", "background.js"]
+        "./scripts/jquery.js", "./scripts/background.js"]
     },
     "version": "1.0",
      

@@ -16,7 +16,7 @@
       "scripts" : [
         "./scripts/jquery.js", "./scripts/background.js"]
     },
-    "version": "1.0",
+    "version": "1.1",
      
     "browser_action": {
         "default_title": "Set products",

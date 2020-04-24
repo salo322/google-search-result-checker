@@ -14,6 +14,7 @@
             let input = document.createElement('input');
                 input.type = 'checkbox';
                 $('.LC20lb').prepend(input);
+                $('.l').prepend(input);
                 $('.checkButton').click(function() {
                 $('input:checkbox').not(this).prop('checked', this.checked);
                             
@@ -30,17 +31,21 @@
                 
                 
                 $( ".copy" ).click(function() {
-                    var inp = $("<input>");
+                    var inp = $("<textarea>");
                     $("body").append(inp);
-                    var str = ""
-                  
-                    $('a').filter(':has(:checkbox:checked)').each(function() {                     
-                       str+= $(this).attr('href')
-                    })
-                  
+                    
+                    var str = "";
+                    
+                    $('a').filter(':has(:checkbox:checked)').each(function() {  
+                        let string = $(this).attr('href') + "\n";                   
+                        str+= string ;
+                        
+                        
+                    });
+                
                     inp.val(str).select();
                     document.execCommand("copy");
                     inp.remove();
-                  })
+                })
                
 
